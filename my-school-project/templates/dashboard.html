@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .tab:hover {
+            background-color: #f0f0f0;
+        }
+
+        .table-container {
+            margin-top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .photo-details {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tabs">
+  <div class="tab" onclick="displayTable('infant')">Infant</div>
+  <div class="tab" onclick="displayTable('youngToddler')">Young Toddler</div>
+  <div class="tab" onclick="displayTable('toddler')">Toddler</div>
+  <div class="tab" onclick="displayTable('preK')">Pre-K</div>
+  <div class="tab" onclick="displayTable('kindergarten')">Kindergarten</div>
+</div>
+
+<div class="table-container">
+  <table id="childTable">
+    <!-- Table content will be dynamically populated -->
+  </table>
+</div>
+
+<div class="photo-details" id="photoDetails">
+  <!-- Child photo and parent details will be displayed here -->
+</div>
+
+
+<script>
+        function displayTable(tabName) {
+            // Logic to fetch and display data for the selected tab
+            // You can use AJAX or fetch API to get data from your server
+            // For demonstration purposes, we'll assume data is already available
+            const tableData = [
+                { serialNo: 1, firstName: 'Sam', lastName: 'Curran' },
+                // Add more data as needed
+            ];
+
+            const tableContainer = document.getElementById('childTable');
+            const photoDetailsContainer = document.getElementById('photoDetails');
+
+            // Clear previous content
+            tableContainer.innerHTML = '';
+            photoDetailsContainer.innerHTML = '';
+
+            // Display table
+            const table = document.createElement('table');
+            const headerRow = table.createTHead().insertRow(0);
+            const headings = ['Serial No', 'First Name', 'Last Name'];
+
+            headings.forEach((heading) => {
+                const th = document.createElement('th');
+                th.textContent = heading;
+                headerRow.appendChild(th);
+            });
+
+            tableData.forEach((row) => {
+                const tr = table.insertRow();
+                Object.values(row).forEach((value) => {
+                    const td = tr.insertCell();
+                    td.textContent = value;
+                });
+            });
+
+            tableContainer.appendChild(table);
+
+            // Display photo and details (you need to replace this with actual data fetching logic)
+            const photoDetails = document.createElement('div');
+            photoDetails.innerHTML = '<h3>Child Photo and Parent Details</h3>';
+            // Add logic to display child photo and parent details here
+
+            photoDetailsContainer.appendChild(photoDetails);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+<body>
+<h1>Student Details</h1>
+<div>
+    <p><strong>Username:</strong> {{ student.username }}</p>
+    <p><strong>First Name:</strong> {{ student.child_first_name }}</p>
+    <p><strong>Last Name:</strong> {{ student.child_last_name }}</p>
+    <p><strong>Class:</strong> {{ student.class }}</p>
+    <h2>Mother's Information</h2>
+    <p><strong>Mother's First Name:</strong> {{ student.mother_first_name }}</p>
+    <p><strong>Mother's Phone Number:</strong> {{ student.mother_phone_number }}</p>
+    <h2>Father's Information</h2>
+    <p><strong>Father's First Name:</strong> {{ student.father_first_name }}</p>
+    <p><strong>Father's Phone Number:</strong> {{ student.father_phone_number }}</p>
+</div>
+</body>
+</html>

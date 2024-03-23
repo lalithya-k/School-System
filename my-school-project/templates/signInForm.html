@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primrose Schools - Sign Up</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 20%;
+        }
+
+        label {
+            text-align: left;
+            margin-bottom: 10px;
+            width: 100%;
+            display: inline;
+        }
+
+        input {
+            margin-bottom: 10px;
+            width: calc(50% - 10px); /* Adjusted width to account for label width and margin */
+            box-sizing: border-box;
+            display: block;
+        }
+
+        #dob {
+            width: calc(50% - 4px);
+        }
+
+        #save, #cancel {
+            padding: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function() {
+            // Add date picker to the Date of Birth field
+            $("#dob").datepicker();
+        });
+    </script>
+</head>
+<body>
+<h2>Sign Up for Primrose Schools</h2>
+
+<form action="#" method="post">
+    <label for="childFirstName">Child First Name </label>
+    <input type="text" id="childFirstName" name="childFirstName" required>
+
+    <label for="childLastName">Child Last Name</label>
+    <input type="text" id="childLastName" name="childLastName" required>
+
+    <label for="dob">Date of Birth</label>
+    <input type="text" id="dob" name="dob" readonly="readonly" required>
+
+    <label for="primaryPhoneNumber">Primary Phone Number</label>
+    <input type="tel" id="primaryPhoneNumber" name="primaryPhoneNumber" required>
+
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" required>
+
+    <label for="class">Class</label>
+    <input type="text" id="class" name="class" required>
+
+    <label for="motherFirstName">Mother First Name</label>
+    <input type="text" id="motherFirstName" name="motherFirstName" required>
+
+    <label for="motherLastName">Mother Last Name</label>
+    <input type="text" id="motherLastName" name="motherLastName" required>
+
+    <label for="motherPhoneNumber">Mother Phone Number</label>
+    <input type="tel" id="motherPhoneNumber" name="motherPhoneNumber" required>
+
+    <label for="motherEmail">Mother Email Address</label>
+    <input type="email" id="motherEmail" name="motherEmail" required>
+
+    <label for="fatherFirstName">Father First Name</label>
+    <input type="text" id="fatherFirstName" name="fatherFirstName" required>
+
+    <label for="fatherLastName">Father Last Name</label>
+    <input type="text" id="fatherLastName" name="fatherLastName" required>
+
+    <label for="fatherPhoneNumber">Father Phone Number</label>
+    <input type="tel" id="fatherPhoneNumber" name="fatherPhoneNumber" required>
+
+    <label for="fatherEmail">Father Email Address</label>
+    <input type="email" id="fatherEmail" name="fatherEmail" required>
+
+    <label for="loginUserName">Login UserName</label>
+    <input type="text" id="loginUserName" name="loginUserName" required>
+
+    <label for="loginPassword">Login Password</label>
+    <input type="password" id="loginPassword" name="loginPassword" required>
+
+    <button type="submit" id="save">Save</button>
+    <button type="button" id="cancel">Cancel</button>
+</form>
+</body>
+</html>
